@@ -1,7 +1,8 @@
 # gem skjvs
 
-String key json value storage, i.e. keys are automatically converted to MD5, values are serialized to JSON.  
-Replacement for `YAML::Store` and such.
+Very simple yet efficient "string key -> json value" storage, i.e. keys are automatically converted to MD5, values are serialized to JSON.
+
+Persistent file is concurrently accessible from any number of threads or processes. Consistency is gauranteed by file locking. Faster than `YAML::Store` by magnitudes. You only pay with theoretical MD5 collisions and growing file size on value overwrite.
 
 ## Installation
 
@@ -19,7 +20,7 @@ store[123] = "2\n3"
 assert_equal "2\n3", store[123]
 ```
 
-Store file is meant to be accessible from multiple processes at the same time. Though the store file is thread-safe. But store object isn't, so for each thread do own `SKJVS::OneFile.new`.
+Store file is meant to be accessible from multiple processes at the same time. Though the store file is thread-safe, but store object isn't, so for each thread do own `SKJVS::OneFile.new`.
 
 ## Benchmark
 
