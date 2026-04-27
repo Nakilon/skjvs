@@ -30,6 +30,7 @@ module SKJVS
       ::File.open @path, "a" do |file|
         file.flock ::File::LOCK_EX
         file.puts "#{::Digest::MD5.hexdigest key.to_s} #{::JSON.generate value}"
+        file.flush
       end
     end
 
