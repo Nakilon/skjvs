@@ -45,7 +45,7 @@ By current design the store file isn't editing, only growing, so value overwriti
 
 To better understand the design and trade-offs of test and benchmark, see automated TLDR:
 
-<img width="1310" height="437" alt="image" src="https://github.com/user-attachments/assets/adab5221-0dc9-45dd-b1fd-b7e4cb1db9c6" />
+<img width="1204" height="535" alt="image" src="https://github.com/user-attachments/assets/150efc99-8686-4056-a032-78d79883f1bb" />
 
 ## Development:
 
