@@ -15,6 +15,7 @@ $ gem install skjvs
 Only two methods are supported for now: `[]` and `[]=`.
 
 ```ruby
+require "skjvs/one_file"
 store = SKJVS::OneFile.new
 store[123] = "2\n3"
 assert_equal "2\n3", store[123]
